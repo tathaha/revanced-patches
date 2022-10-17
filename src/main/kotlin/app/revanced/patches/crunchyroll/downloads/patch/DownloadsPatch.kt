@@ -3,11 +3,10 @@ package app.revanced.patches.crunchyroll.downloads.patch
 import app.revanced.patcher.annotation.Description
 import app.revanced.patcher.annotation.Name
 import app.revanced.patcher.annotation.Version
-import app.revanced.patcher.data.BytecodeContext
+import app.revanced.patcher.BytecodeContext
 import app.revanced.patcher.extensions.replaceInstruction
 import app.revanced.patcher.patch.BytecodePatch
 import app.revanced.patcher.patch.PatchResult
-import app.revanced.patcher.patch.PatchResultSuccess
 import app.revanced.patcher.patch.annotations.Patch
 import app.revanced.patches.crunchyroll.downloads.annotations.DownloadsCompatibility
 import app.revanced.patches.crunchyroll.downloads.fingerprints.DownloadsFingerprint
@@ -32,6 +31,6 @@ class DownloadsPatch : BytecodePatch(
                 """
             )
         }
-        return PatchResultSuccess()
+        return PatchResult.Success
     }
 }

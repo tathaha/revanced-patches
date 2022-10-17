@@ -1,9 +1,9 @@
 package app.revanced.extensions
 
-import app.revanced.patcher.data.BytecodeContext
+import app.revanced.patcher.BytecodeContext
 import app.revanced.patcher.extensions.MethodFingerprintExtensions.name
 import app.revanced.patcher.fingerprint.method.impl.MethodFingerprint
-import app.revanced.patcher.patch.PatchResultError
+import app.revanced.patcher.patch.PatchResult
 import app.revanced.patcher.util.proxy.mutableTypes.MutableClass
 import app.revanced.patcher.util.proxy.mutableTypes.MutableMethod
 import org.jf.dexlib2.iface.Method
@@ -12,11 +12,11 @@ import org.w3c.dom.Node
 
 // TODO: populate this to all patches
 /**
- * Convert a [MethodFingerprint] to a [PatchResultError].
+ * Convert a [MethodFingerprint] to a [PatchResult.Error].
  *
- * @return A [PatchResultError] for the [MethodFingerprint].
+ * @return A [PatchResult.Error] for the [MethodFingerprint].
  */
-fun MethodFingerprint.toErrorResult() = PatchResultError("Failed to resolve $name")
+fun MethodFingerprint.toErrorResult() = PatchResult.Error("Failed to resolve $name")
 
 /**
  * Find the [MutableMethod] from a given [Method] in a [MutableClass].
@@ -36,7 +36,7 @@ fun MutableClass.findMutableMethodOf(method: Method) = this.methods.first {
  */
 fun BytecodeContext.traverseClassHierarchy(targetClass: MutableClass, callback: MutableClass.() -> Unit) {
     callback(targetClass)
-    this.findClass(targetClass.superclass ?: return)?.mutableClass?.let {
+    this.classes.findClassProxied(targetClass.superclass ?: return)?.mutableClass?.let {
         traverseClassHierarchy(it, callback)
     }
 }

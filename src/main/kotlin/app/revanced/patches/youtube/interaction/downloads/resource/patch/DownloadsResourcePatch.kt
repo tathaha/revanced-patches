@@ -1,18 +1,13 @@
 package app.revanced.patches.youtube.interaction.downloads.resource.patch
 
+import app.revanced.patcher.ResourceContext
 import app.revanced.patcher.annotation.Description
 import app.revanced.patcher.annotation.Name
 import app.revanced.patcher.annotation.Version
-import app.revanced.patcher.data.ResourceContext
 import app.revanced.patcher.patch.PatchResult
-import app.revanced.patcher.patch.PatchResultSuccess
 import app.revanced.patcher.patch.ResourcePatch
 import app.revanced.patcher.patch.annotations.DependsOn
-import app.revanced.patches.shared.settings.preference.impl.StringResource
-import app.revanced.patches.shared.settings.preference.impl.SwitchPreference
-import app.revanced.patches.shared.settings.preference.impl.TextPreference
-import app.revanced.patches.shared.settings.preference.impl.InputType
-import app.revanced.patches.shared.settings.preference.impl.PreferenceScreen
+import app.revanced.patches.shared.settings.preference.impl.*
 import app.revanced.patches.youtube.interaction.downloads.annotation.DownloadsCompatibility
 import app.revanced.patches.youtube.misc.manifest.patch.FixLocaleConfigErrorPatch
 import app.revanced.patches.youtube.misc.playercontrols.resource.patch.BottomControlsResourcePatch
@@ -71,6 +66,6 @@ class DownloadsResourcePatch : ResourcePatch {
 
         BottomControlsResourcePatch.addControls("downloads/host/layout/${BottomControlsResourcePatch.TARGET_RESOURCE_NAME}")
 
-        return PatchResultSuccess()
+        return PatchResult.Success
     }
 }
