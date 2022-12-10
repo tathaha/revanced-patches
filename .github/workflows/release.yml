@@ -32,9 +32,13 @@ jobs:
         run: ./gradlew build clean generateMeta
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
-      - name: Setup semantic-release
-        run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog gradle-semantic-release-plugin -D
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+      - name: Upload release asset
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "false"
+          prerelease: false
+          title: "Release Build"
+          files: |
+                *.jar
+                *.json
