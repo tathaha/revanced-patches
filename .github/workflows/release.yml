@@ -33,7 +33,10 @@ jobs:
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
       - name: List Dir
-        run: ls
+        run: |
+            cd ..
+            ls
+
       - name: Upload release asset
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
