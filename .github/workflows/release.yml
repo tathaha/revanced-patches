@@ -32,6 +32,8 @@ jobs:
         run: ./gradlew build clean generateMeta
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
+      - name: List Dir
+        run: ls
       - name: Upload release asset
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -40,5 +42,5 @@ jobs:
            prerelease: false
            title: "Release Build"
            files: |
-                *.jar
+                revanced-patches*.jar
                 *.json
