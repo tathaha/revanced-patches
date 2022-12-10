@@ -33,7 +33,7 @@ jobs:
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
       - name: List Dir
-        run: ls build
+        run: ls src
           
            
 
