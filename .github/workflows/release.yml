@@ -29,13 +29,13 @@ jobs:
       - name: Build with Gradle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew build clean generateMeta
+        run: ./gradlew build
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
       - name: List Dir
-        run: |
-            cd src
-            ls
+        run: ls
+            
+           
 
       - name: Upload release asset
         uses: "marvinpinto/action-automatic-releases@latest"
