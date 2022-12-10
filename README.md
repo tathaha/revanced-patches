@@ -1,3 +1,5 @@
+[![Release](https://github.com/tathaha/revanced-patches/actions/workflows/release.yml/badge.svg)](https://github.com/tathaha/revanced-patches/actions/workflows/release.yml)
+
 ## 🧩 Patches
 
 The official Patch bundle provided by ReVanced and the community.
