@@ -34,7 +34,7 @@ jobs:
         run: sdkmanager "build-tools;32.0.0"
       - name: List Dir
         run: |
-            cd ..
+            cd src
             ls
 
       - name: Upload release asset
