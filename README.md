@@ -1,5 +1,5 @@
 [![Release](https://github.com/tathaha/revanced-patches/actions/workflows/release.yml/badge.svg)](https://github.com/tathaha/revanced-patches/actions/workflows/release.yml)
-
+[![Sync Fork](https://github.com/tathaha/revanced-patches/actions/workflows/main.yml/badge.svg)](https://github.com/tathaha/revanced-patches/actions/workflows/main.yml)
 ## 🧩 Patches
 
 The official Patch bundle provided by ReVanced and the community.
