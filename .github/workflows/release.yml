@@ -33,12 +33,12 @@ jobs:
       - name: Install Android build-tools
         run: sdkmanager "build-tools;32.0.0"
       - name: Upload release asset
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "false"
-          prerelease: false
-          title: "Release Build"
-          files: |
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+           repo_token: "${{ secrets.GITHUB_TOKEN }}"
+           automatic_release_tag: "false"
+           prerelease: false
+           title: "Release Build"
+           files: |
                 *.jar
                 *.json
