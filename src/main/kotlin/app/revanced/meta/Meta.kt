@@ -13,7 +13,7 @@ object Meta {
     @JvmStatic
     fun main(args: Array<String>) {
         val patches = accumulatePatches()
-        if (patches.isEmpty()) throw IllegalStateException("No patches found")
+        if (patches.isEmpty()) throw IllegalStateException("Không tìm tháy bản vá nào cả")
 
         generateText(patches)
         generateJson(patches)
